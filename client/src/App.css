@@ -1,0 +1,9 @@
+.container {
+  overflow-y: scroll;
+  height: 40rem;
+  padding: 2rem;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
