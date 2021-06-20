@@ -12,12 +12,12 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
-interface IForm {
+type IForm = {
   user: string;
   email: string;
   pass: string;
   spinner: boolean;
-}
+};
 
 export const RegisterForm: React.FC = () => {
   const toast = useToast();
@@ -31,7 +31,7 @@ export const RegisterForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    //@ts-ignore
+    //@ts-expect-error
     form[name] = value;
     setForm({ ...form });
   };

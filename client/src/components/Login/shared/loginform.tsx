@@ -29,7 +29,7 @@ export const LoginForm: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    //@ts-ignore
+    //@ts-expect-error
     form[name] = value;
     setForm({ ...form });
   };
