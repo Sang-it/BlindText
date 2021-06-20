@@ -19,10 +19,14 @@ search.post("/search", authToken, async (req: Request, res: Response) => {
 
 search.post("/random", authToken, async (req: Request, res: Response) => {
   const { username } = req.body;
-  const data = await User.query(
-    `SELECT * FROM (SELECT username,id FROM public.user  ORDER BY RANDOM() LIMIT 10) AS foo WHERE foo.username <> '${username}' `
-  );
-  res.json(data);
+  try {
+    const data = await User.query(
+      `SELECT * FROM (SELECT username,id FROM public.user  ORDER BY RANDOM() LIMIT 10) AS foo WHERE foo.username <> '${username}' `
+    );
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 export default search;
