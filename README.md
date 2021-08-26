@@ -1,6 +1,7 @@
 # BlindText
 
 Just a pet project I did to learn typescript.
+Currently not hosted.
 
 #Features
 
